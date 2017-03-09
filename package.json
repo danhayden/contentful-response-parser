@@ -28,5 +28,13 @@
   },
   "standard": {
     "ignore": "dist/**"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danhayden/contentful-response-parser.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danhayden/contentful-response-parser/issues"
+  },
+  "homepage": "https://github.com/danhayden/contentful-response-parser#readme"
 }
