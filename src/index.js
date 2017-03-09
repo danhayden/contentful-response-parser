@@ -1,19 +1,18 @@
-import { reduce, isArray, isObject } from 'lodash'
-
 export const generateItemObject = (data, assets = null, entries = null) => {
-  if (isArray(data.items)) return generateItemObjectArray(data)[0]
+  if (Array.isArray(data.items)) return generateItemObjectArray(data)[0]
   assets = assets || generateAssetsObject(data)
   entries = entries || generateEntriesObject(data, assets)
-  return reduce(data.fields, (result, value, key) => {
+  const item = {}
+  Object.keys(data.fields).forEach(key => {
     let fieldValue = data.fields[key]
-    if (isArray(fieldValue) && fieldValue[0].sys) {
+    if (Array.isArray(fieldValue) && fieldValue[0].sys) {
       fieldValue = resolveLinkArray(fieldValue, assets, entries)
-    } else if (isObject(fieldValue) && fieldValue.sys) {
+    } else if (fieldValue.sys) {
       fieldValue = resolveLink(fieldValue, assets, entries)
     }
-    result[key] = fieldValue
-    return result
-  }, {})
+    item[key] = fieldValue
+  })
+  return item
 }
 
 export const generateItemObjectArray = (data) => {
@@ -25,7 +24,7 @@ export const generateItemObjectArray = (data) => {
 const generateAssetsObject = (data) => {
   if (!data.includes) return {}
   const Asset = data.includes.Asset || []
-  return reduce(Asset, (result, value) => {
+  return Asset.reduce((result, value) => {
     result[value.sys.id] = {
       title: value.fields.title,
       url: `https:${value.fields.file.url}`,
@@ -38,7 +37,7 @@ const generateAssetsObject = (data) => {
 const generateEntriesObject = (data, assets) => {
   if (!data.includes) return {}
   const Entry = data.includes.Entry || []
-  return reduce(Entry, (result, value, key) => {
+  return Entry.reduce((result, value, key) => {
     result[value.sys.id] = generateItemObject(value, assets)
     return result
   }, {})

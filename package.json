@@ -14,9 +14,6 @@
   ],
   "author": "Dan Hayden <dan@tutonics.com>",
   "license": "MIT",
-  "dependencies": {
-    "lodash": "4.17.4"
-  },
   "devDependencies": {
     "babel-core": "6.23.1",
     "babel-loader": "6.4.0",
