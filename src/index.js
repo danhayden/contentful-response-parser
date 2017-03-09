@@ -52,5 +52,6 @@ const resolveLink = (item, assets, entries) => {
 }
 
 const resolveLinkArray = (data, assets = {}, entries = {}) => {
-  return data.items.map(datum => resolveLink(datum, assets, entries))
+  const items = data.items || data
+  return items.map(datum => resolveLink(datum, assets, entries))
 }
