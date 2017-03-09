@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "babel-plugin-lodash"
+  ],
+  "presets": [
+    ["babel-preset-env", {
+      "modules": false,
+      "loose": true,
+      "targets": {"browsers": ["last 2 versions", "> 1%"]}
+    }]
+  ]
+}

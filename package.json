@@ -1,0 +1,32 @@
+{
+  "name": "contentful-response-parser",
+  "version": "1.0.0",
+  "description": "Parse Contentful HTTP API response and resolve all nested Asset and Entry links",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "standard",
+    "build": "webpack --env.production",
+    "dev": "webpack --env.develop",
+    "changelog": "standard-version"
+  },
+  "keywords": [
+    "contentful"
+  ],
+  "author": "Dan Hayden <dan@tutonics.com>",
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "4.17.4"
+  },
+  "devDependencies": {
+    "babel-core": "6.23.1",
+    "babel-loader": "6.4.0",
+    "babel-plugin-lodash": "3.2.11",
+    "babel-preset-env": "1.2.1",
+    "standard": "9.0.1",
+    "standard-version": "4.0.0",
+    "webpack": "2.2.1"
+  },
+  "standard": {
+    "ignore": "dist/**"
+  }
+}

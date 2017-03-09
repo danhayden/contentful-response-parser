@@ -1,0 +1,6 @@
+# npm dependencies
+node_modules
+
+# system files
+*.log
+.DS_Store
