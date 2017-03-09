@@ -1,4 +1,4 @@
-import { reduce, get, isArray, isObject, map } from 'lodash'
+import { reduce, isArray, isObject } from 'lodash'
 
 export const generateItemObject = (data, assets = null, entries = null) => {
   if (isArray(data.items)) return generateItemObjectArray(data)[0]
@@ -19,12 +19,12 @@ export const generateItemObject = (data, assets = null, entries = null) => {
 export const generateItemObjectArray = (data) => {
   const assets = generateAssetsObject(data)
   const entries = generateEntriesObject(data, assets)
-  return map(data.items, datum => generateItemObject(datum, assets, entries))
+  return data.items.map(datum => generateItemObject(datum, assets, entries))
 }
 
 const generateAssetsObject = (data) => {
   if (!data.includes) return {}
-  const Asset = get(data, 'includes.Asset', [])
+  const Asset = data.includes.Asset || []
   return reduce(Asset, (result, value) => {
     result[value.sys.id] = {
       title: value.fields.title,
@@ -37,7 +37,7 @@ const generateAssetsObject = (data) => {
 
 const generateEntriesObject = (data, assets) => {
   if (!data.includes) return {}
-  const Entry = get(data, 'includes.Entry', [])
+  const Entry = data.includes.Entry || []
   return reduce(Entry, (result, value, key) => {
     result[value.sys.id] = generateItemObject(value, assets)
     return result
@@ -53,5 +53,5 @@ const resolveLink = (item, assets, entries) => {
 }
 
 const resolveLinkArray = (data, assets = {}, entries = {}) => {
-  return map(data.items, datum => resolveLink(datum, assets, entries))
+  return data.items.map(datum => resolveLink(datum, assets, entries))
 }
