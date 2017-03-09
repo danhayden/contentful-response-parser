@@ -8,7 +8,9 @@ module.exports = (env) => {
     },
     output: {
       path: path.join(__dirname, 'dist/'),
-      filename: '[name].js'
+      filename: '[name].js',
+      library: 'contentfulResponseParser',
+      libraryTarget: 'umd'
     },
     watch: env.develop,
     resolve: {
