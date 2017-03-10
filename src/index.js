@@ -25,11 +25,19 @@ const generateAssetsObject = (data) => {
   if (!data.includes) return {}
   const Asset = data.includes.Asset || []
   return Asset.reduce((result, value) => {
-    result[value.sys.id] = Object.assign({}, value.fields.file, {
-      title: value.fields.title,
-      url: 'https:' + value.fields.file.url,
-      description: value.fields.description
+    const asset = {}
+    Object.keys(value.fields).forEach(key => {
+      if (key === 'file') return
+      asset[key] = value.fields[key]
     })
+    Object.keys(value.fields.file).forEach(key => {
+      if (key === 'url') {
+        asset[key] = 'https:' + value.fields.file[key]
+      } else {
+        asset[key] = value.fields.file[key]
+      }
+    })
+    result[value.sys.id] = asset
     return result
   }, {})
 }

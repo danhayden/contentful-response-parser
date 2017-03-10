@@ -38,6 +38,10 @@ export const getBlogPost = (postSlug) => {
 }
 ```
 
+### License
+
+MIT
+
 [version]: https://img.shields.io/npm/v/contentful-response-parser.svg
 [MIT License]: https://img.shields.io/npm/l/contentful-response-parser.svg
 [Standard]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
