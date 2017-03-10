@@ -25,11 +25,11 @@ const generateAssetsObject = (data) => {
   if (!data.includes) return {}
   const Asset = data.includes.Asset || []
   return Asset.reduce((result, value) => {
-    result[value.sys.id] = {
+    result[value.sys.id] = Object.assign({}, value.fields.file, {
       title: value.fields.title,
-      url: `https:${value.fields.file.url}`,
+      url: 'https:' + value.fields.file.url,
       description: value.fields.description
-    }
+    })
     return result
   }, {})
 }
