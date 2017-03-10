@@ -1,6 +1,6 @@
 {
   "name": "contentful-response-parser",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "description": "Parse Contentful HTTP API response and resolve all nested Asset and Entry links",
   "main": "dist/index.js",
   "scripts": {

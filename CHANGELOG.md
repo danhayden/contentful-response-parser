@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/danhayden/contentful-response-parser/compare/v1.0.5...v1.1.0) (2017-03-10)
+
+
+### Features
+
+* expose all image data ([2028a36](https://github.com/danhayden/contentful-response-parser/commit/2028a36))
+
+
+
 <a name="1.0.5"></a>
 ## [1.0.5](https://github.com/danhayden/contentful-response-parser/compare/v1.0.4...v1.0.5) (2017-03-09)
 
