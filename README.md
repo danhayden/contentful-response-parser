@@ -4,7 +4,7 @@
 [![MIT License][MIT License]](http://opensource.org/licenses/MIT)
 [![Standard][Standard]](http://standardjs.com)
 [![Standard Version][Standard Version]](https://github.com/conventional-changelog/standard-version)
-[![Size][Size]](https://github.com/danhayden/contentful-response-parser/blob/master/dist/index.js)
+[![Size][Size]](https://unpkg.com/contentful-response-parser)
 
 This module will parse the Contentful HTTP API response and resolve all nested Asset and Entry links for easier to work with data
 
@@ -46,4 +46,4 @@ MIT
 [MIT License]: https://img.shields.io/npm/l/contentful-response-parser.svg
 [Standard]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [Standard Version]: https://img.shields.io/badge/release-standard%20version-brightgreen.svg
-[Size]: https://badge-size.herokuapp.com/danhayden/contentful-response-parser/master/dist/index.js
+[Size]: https://badges.herokuapp.com/size/npm/contentful-response-parser?gzip=true&label=gzipped
