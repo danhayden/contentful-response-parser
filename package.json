@@ -1,6 +1,6 @@
 {
   "name": "contentful-response-parser",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Parse Contentful HTTP API response and resolve all nested Asset and Entry links",
   "keywords": [
     "contentful"
@@ -24,9 +24,7 @@
   },
   "standard": {
     "parser": "babel-eslint",
-    "ignore": [
-      "dist/**"
-    ]
+    "ignore": "dist/**"
   },
   "devDependencies": {
     "babel-eslint": "7.2.3",
@@ -39,10 +37,6 @@
     "standard": "10.0.2",
     "standard-version": "4.0.0",
     "uglify-js-harmony": "2.7.7"
-  },
-  "standard": {
-    "parser": "babel-eslint",
-    "ignore": "dist/**"
   },
   "repository": {
     "type": "git",
