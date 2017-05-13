@@ -1,7 +1,4 @@
 {
-  "plugins": [
-    "babel-plugin-lodash"
-  ],
   "presets": [
     ["babel-preset-env", {
       "modules": false,

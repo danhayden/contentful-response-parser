@@ -2,28 +2,46 @@
   "name": "contentful-response-parser",
   "version": "1.1.0",
   "description": "Parse Contentful HTTP API response and resolve all nested Asset and Entry links",
-  "main": "dist/index.js",
-  "scripts": {
-    "test": "standard",
-    "build": "webpack --env.production",
-    "dev": "webpack --env.develop",
-    "changelog": "standard-version"
-  },
   "keywords": [
     "contentful"
   ],
   "author": "Dan Hayden <dan@tutonics.com>",
   "license": "MIT",
-  "devDependencies": {
-    "babel-core": "6.23.1",
-    "babel-loader": "6.4.0",
-    "babel-plugin-lodash": "3.2.11",
-    "babel-preset-env": "1.2.1",
-    "standard": "9.0.1",
-    "standard-version": "4.0.0",
-    "webpack": "2.2.1"
+  "main": "dist/contentful-response-parser.js",
+  "module": "dist/contentful-response-parser.es.js",
+  "umd:main": "dist/contentful-response-parser.umd.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "pretest": "standard",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard --format",
+    "changelog": "standard-version",
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "prepublish": "npm run build"
   },
   "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "dist/**"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "7.2.3",
+    "babel-preset-env": "1.4.0",
+    "rollup": "0.41.6",
+    "rollup-plugin-babel": "2.7.1",
+    "rollup-plugin-node-resolve": "3.0.0",
+    "rollup-plugin-uglify": "1.0.2",
+    "rollup-watch": "3.2.2",
+    "standard": "10.0.2",
+    "standard-version": "4.0.0",
+    "uglify-js-harmony": "2.7.7"
+  },
+  "standard": {
+    "parser": "babel-eslint",
     "ignore": "dist/**"
   },
   "repository": {
