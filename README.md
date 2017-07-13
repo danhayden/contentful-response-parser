@@ -38,6 +38,10 @@ export const getBlogPost = (postSlug) => {
 }
 ```
 
+### Limitations
+
+Currently this library does not support deep nested entries (PRs welcome!)
+
 ### License
 
 MIT
