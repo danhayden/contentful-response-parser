@@ -28,15 +28,15 @@
   },
   "devDependencies": {
     "babel-eslint": "7.2.3",
-    "babel-preset-env": "1.4.0",
-    "rollup": "0.41.6",
+    "babel-preset-env": "1.6.0",
+    "rollup": "0.45.2",
     "rollup-plugin-babel": "2.7.1",
     "rollup-plugin-node-resolve": "3.0.0",
-    "rollup-plugin-uglify": "1.0.2",
-    "rollup-watch": "3.2.2",
+    "rollup-plugin-uglify": "2.0.1",
+    "rollup-watch": "4.3.1",
     "standard": "10.0.2",
-    "standard-version": "4.0.0",
-    "uglify-js-harmony": "2.7.7"
+    "standard-version": "4.2.0",
+    "uglify-es": "3.0.24"
   },
   "repository": {
     "type": "git",
