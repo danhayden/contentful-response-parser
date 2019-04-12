@@ -54,7 +54,12 @@ const generateEntriesObject = (data, assets) => {
 
 const resolveLink = (item, assets, entries) => {
   if (item.sys.linkType === 'Asset') {
-    return assets[item.sys.id] || {}
+    if (assets[item.sys.id]) {
+      assets[item.sys.id].id = item.sys.id
+      return assets[item.sys.id]
+     } else {
+       return {}
+     }
   } else if (item.sys.linkType === 'Entry') {
     if (entries[item.sys.id]) {
       entries[item.sys.id].id = item.sys.id
