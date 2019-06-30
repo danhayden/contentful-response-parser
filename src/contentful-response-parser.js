@@ -12,6 +12,7 @@ export const generateItemObject = (data, assets = null, entries = null) => {
     }
     item[key] = fieldValue
   })
+  item.id = data.sys.id
   return item
 }
 
@@ -53,9 +54,19 @@ const generateEntriesObject = (data, assets) => {
 
 const resolveLink = (item, assets, entries) => {
   if (item.sys.linkType === 'Asset') {
-    return assets[item.sys.id] || {}
+    if (assets[item.sys.id]) {
+      assets[item.sys.id].id = item.sys.id
+      return assets[item.sys.id]
+     } else {
+       return {}
+     }
   } else if (item.sys.linkType === 'Entry') {
-    return entries[item.sys.id] || {}
+    if (entries[item.sys.id]) {
+      entries[item.sys.id].id = item.sys.id
+      return entries[item.sys.id]
+     } else {
+       return {}
+     }
   }
 }
 
